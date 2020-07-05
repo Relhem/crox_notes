@@ -19,11 +19,9 @@ Route::group([
     'middleware' => ['cors'],
 ], function ($router) {
         Route::get('/notes', 'IndexController@getNotes');
-        Route::get('/addNote', 'IndexController@addNote');
-        Route::get('/deleteNote/{noteId}', 'IndexController@destroy');
-        Route::get('/editNote/{noteId}', 'IndexController@edit');
+        Route::post('/addNote', 'IndexController@addNote');
+        Route::delete('/deleteNote/{noteId}', 'IndexController@destroy');
+        Route::put('/editNote/{noteId}', 'IndexController@edit');
 
-        Route::get('/switchTag/{noteId}', 'IndexController@switchTag'); 
-
-
+        Route::put('/switchTag/{noteId}', 'IndexController@switchTag'); 
 });
