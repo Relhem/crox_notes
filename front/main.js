@@ -154,7 +154,7 @@ methods:{
             <div>
                 <div class="form-group">
                 <label for="note_name_input">Название заметки</label>
-                <input type="email" class="form-control" id="note_name_input" v-model="note_name">
+                <input class="form-control" id="note_name_input" v-model="note_name">
             </div>
         
             <div class="form-group">
