@@ -175,7 +175,7 @@ methods:{
 methods:{
     addNote: function () {
 
-        axios.get("http://localhost:8000/addNote", {
+        axios.post("http://localhost:8000/addNote", {
             params: {
                 creator: "User",
                 text: this.note_text,
@@ -268,7 +268,7 @@ methods:{
       
       update: function () {
 
-        axios.get("http://localhost:8000/editNote/"+this.note_id, {
+        axios.put("http://localhost:8000/editNote/"+this.note_id, {
             params: {
                 text: this.note_text,
                 name: this.note_name
@@ -285,7 +285,7 @@ methods:{
       switchTag: function () {
 
 
-        axios.get("http://localhost:8000/switchTag/"+this.note_id, {
+        axios.put("http://localhost:8000/switchTag/"+this.note_id, {
             params: {
                 tag:this.note_tag
               }
@@ -361,7 +361,7 @@ methods:{
       } ,
       
       deleteNote: function () {
-        axios.get("http://localhost:8000/deleteNote/"+this.note_id).then(response => {
+        axios.delete("http://localhost:8000/deleteNote/"+this.note_id).then(response => {
             this.hide();
             this.$parent.showSuccessMessage("Запись успешно удалена.");
             
